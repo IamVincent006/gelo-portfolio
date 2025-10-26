@@ -256,6 +256,40 @@ h2 {
   text-decoration: underline;
 }
 
+.contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0;
+  font-size: 1.1rem;
+}
+
+.contact-item img.icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px var(--neon));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.contact-item img.icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px var(--accent));
+}
+
+#contact a {
+  color: var(--neon);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#contact a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+
 /* FOOTER */
 footer {
   text-align: center;
