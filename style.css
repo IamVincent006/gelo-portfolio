@@ -35,7 +35,6 @@ nav {
   z-index: 1000;
   box-shadow: 0 0 15px var(--neon);
 }
-
 nav h1 {
   color: var(--text);
   font-weight: 700;
@@ -45,11 +44,11 @@ nav h1 {
 nav h1 span {
   color: var(--neon);
 }
-
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 nav a {
   text-decoration: none;
@@ -74,7 +73,7 @@ nav a:hover {
 
 /* SECTIONS */
 section {
-  padding: 100px 60px;
+  padding: 100px 5%;
   min-height: 100vh;
 }
 
@@ -85,22 +84,15 @@ section {
   align-items: center;
   background: url("assets/bgnd.jpg") center/cover no-repeat;
   position: relative;
+  flex-wrap: wrap;
 }
 .hero {
   z-index: 2;
-  max-width: 50%;
-}
-.hero h2 {
-  font-size: 2.5rem;
-  color: var(--text);
+  max-width: 600px;
 }
 .hero h2 span {
   color: var(--neon);
   text-shadow: 0 0 20px var(--neon);
-}
-.hero p {
-  margin-top: 10px;
-  color: #b3ecff;
 }
 .btn {
   display: inline-block;
@@ -133,7 +125,7 @@ section {
 }
 
 /* ABOUT */
-#about h2, #skills h2, #contact h2, #resume h2 {
+h2 {
   text-align: center;
   color: var(--neon);
   margin-bottom: 30px;
@@ -157,10 +149,6 @@ section {
 .skill {
   margin-bottom: 25px;
 }
-.skill p {
-  margin-bottom: 5px;
-  font-weight: 600;
-}
 .bar {
   background: rgba(255,255,255,0.1);
   border-radius: 10px;
@@ -182,12 +170,9 @@ section {
   font-weight: 700;
   text-shadow: 0 0 5px rgba(255,255,255,0.5);
 }
-.bar:hover {
-  box-shadow: 0 0 15px var(--neon);
-}
 
 /* RESUME */
-#resume {
+#resume, #certificates {
   max-width: 900px;
   margin: auto;
   background: rgba(255,255,255,0.03);
@@ -196,11 +181,7 @@ section {
   box-shadow: 0 0 20px rgba(0,255,255,0.2);
   z-index: 2;
   position: relative;
-  margin-right: 420px;
-}
-#resume h3 {
-  color: var(--accent);
-  margin-bottom: 15px;
+  margin-right: 420px; /* Keeps it away from portrait */
 }
 .edu-grid {
   display: grid;
@@ -223,39 +204,15 @@ section {
   margin-left: 25px;
   line-height: 1.6;
 }
-.extra {
-  text-align: left;
-  margin-top: 30px;
-}
 
 /* CERTIFICATES */
-#certificates {
-
-  max-width: 900px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-  position: relative;
-  z-index: 2;
-  margin-right: 420px; /* Keeps it away from pinned portrait */
-}
-
-#certificates h2 {
-  text-align: center;
-  color: var(--neon);
-  margin-bottom: 40px;
-}
-
 .certificates-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
   justify-content: center;
   align-items: start;
 }
-
 .certificate {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
@@ -264,17 +221,14 @@ section {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .certificate:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 25px var(--neon);
 }
-
 .certificate h3 {
   color: var(--accent);
   margin-bottom: 15px;
 }
-
 .certificate .btn {
   margin-top: 10px;
   background: var(--neon);
@@ -285,12 +239,10 @@ section {
   font-weight: bold;
   transition: 0.3s;
 }
-
 .certificate .btn:hover {
   background: var(--accent);
   box-shadow: 0 0 20px var(--neon);
 }
-
 
 /* CONTACT */
 #contact {
@@ -312,4 +264,19 @@ footer {
   background: #010101;
   color: #80ffff;
   box-shadow: 0 -2px 15px var(--accent);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .portrait {
+    position: static;
+    margin: 20px auto;
+    display: block;
+  }
+  #resume, #certificates {
+    margin-right: 0;
+  }
+  .hero {
+    max-width: 100%;
+  }
 }
