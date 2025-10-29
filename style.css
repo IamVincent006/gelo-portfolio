@@ -141,6 +141,102 @@ h2 {
   font-size: 1.1rem;
 }
 
+/* ICON beside section titles */
+.section-icon {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 6px var(--neon));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.section-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px var(--accent));
+}
+
+/* Align text and icon nicely */
+#about h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+/* HOBBIES & INTERESTS */
+#hobbies {
+  text-align: center;
+  padding-top: 60px;
+}
+
+.hobbies-container {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.hobbies-container ul {
+  list-style: disc;
+  max-width: 600px;
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-top: 10px;
+}
+
+.hobbies-container li {
+  margin-bottom: 12px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.hobbies-container li:hover {
+  color: var(--neon);
+  text-shadow: 0 0 8px var(--neon);
+  cursor: default;
+}
+
+/* Section icon (shared style) */
+.section-icon {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 6px var(--neon));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.section-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px var(--accent));
+}
+
+/* Make titles with icons centered */
+#about h2,
+#hobbies h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Hobbies list style */
+.hobbies-container {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.hobbies-container ul {
+  list-style: disc;
+  line-height: 1.8;
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+
 /* SKILLS */
 .skills-container {
   max-width: 600px;
@@ -170,6 +266,32 @@ h2 {
   font-weight: 700;
   text-shadow: 0 0 5px rgba(255,255,255,0.5);
 }
+
+
+.section-icon {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 6px var(--neon));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.section-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px var(--accent));
+}
+
+/* Center and align title + icon */
+#about h2,
+#hobbies h2,
+#skills h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 
 /* RESUME */
 #resume, #certificates {
@@ -247,27 +369,39 @@ h2 {
 /* CONTACT */
 #contact {
   text-align: center;
+  padding-bottom: 100px;
 }
-#contact a {
-  color: var(--neon);
-  text-decoration: none;
-}
-#contact a:hover {
-  text-decoration: underline;
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
 }
 
 .contact-item {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin: 15px 0;
-  font-size: 1.1rem;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 15px 25px;
+  width: 320px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0,255,255,0.1);
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px var(--neon);
+  border-color: var(--neon);
 }
 
 .contact-item img.icon {
-  width: 28px;
-  height: 28px;
+  width: 35px;
+  height: 35px;
   object-fit: contain;
   filter: drop-shadow(0 0 6px var(--neon));
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -278,17 +412,24 @@ h2 {
   filter: drop-shadow(0 0 10px var(--accent));
 }
 
-#contact a {
+.contact-item h3 {
+  margin: 0;
   color: var(--neon);
+  font-size: 1rem;
+}
+
+.contact-item a {
+  color: var(--text);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: 0.3s;
+  display: block;
+  font-size: 0.95rem;
 }
 
-#contact a:hover {
+.contact-item a:hover {
   color: var(--accent);
-  text-decoration: underline;
+  text-shadow: 0 0 8px var(--accent);
 }
-
 
 /* FOOTER */
 footer {
